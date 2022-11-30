@@ -8,10 +8,6 @@
   max-width: 1130px;
   background-color: aqua;
   margin: 0 auto;
-  /* img{
-    width: 33.9%;
-    height: auto;
-  } */
 }
 
 .wrapper header {
@@ -88,6 +84,11 @@
   /* 534/384 */
   /* 75 */
   /* 459 */
+}
+
+.wrapper .picture .inner-picture img {
+  height: 300px;
+  width: 100px;
 }
 
 .wrapper .picture h1 {
