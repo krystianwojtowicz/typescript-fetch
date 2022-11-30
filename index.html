@@ -4,17 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"
+      integrity="sha512-OdkysyYNjK4CZHgB+dkw9xQp66hZ9TLqmS2vXaBrftfyJeduVhyy1cOfoxiKdi4/bfgpco6REu6Rb+V2oVIRWg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Lato&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
+    <div class="wrapper">
+      <header>
+        <div class="name">
+          Krystian Wójtowicz
+          <!-- imie i nazwisko osoby wykonujacej zadanie -->
+        </div>
+        <div class="form-text">
+          <div class="text">formularz rejestracyjny</div>
+        </div>
+      </header>
+      <div class="picture">
+        <div class="inner-picture"></div>
+        <h1>Name</h1>
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="look">
+          <span>age:</span>
+          <span>eye color:</span>
+        </div>
+        <!-- <img src="s.jpg" alt=""> -->
+      </div>
+      <button><span>next profiles</span></button>
+      <div class="form">
+        <h1>formularz rejestracyjny</h1>
+        <hr class="under-h1" />
+        <div class="inner-form">
+          <span>Login:</span>
+          <hr />
+          <span>Hasło:</span>
+          <hr />
+          <span>Email:</span>
+          <hr />
+          <span>Numer Telefonu:</span>
+          <hr />
+          <label>
+            <input type="checkbox" /><span>Akceptuję Regulamin</span>
+          </label>
+        </div>
+      </div>
+      <!-- <button onclick="donwnload()">dow</button> -->
+    </div>
     <script>
-      const api_url = "https://swapi.dev/api/people/1";
-      async function getISS() {
-        const res = await fetch(api_url);
-        const data = await res.json();
-        console.log(data);
-      }
-      getISS();
+      // function download(){
+      //     axios({
+      //         url:'https://.picsum.photos/534/383',
+      //         method:'GET',
+      //         // responseType:'blob'
+      //     })
+      //     then.((response) => {
+      //         const url = window.URL.createObjectURL(new Blob([respone.data]))
+      //         const link = document.createElement('a');
+      //         link.href = link;
+      //         link.setAttribute('download','image.jpg')
+      //         document.body.appendChild(link)
+      //         link.click()
+      //     })
+      // }
     </script>
   </body>
 </html>
