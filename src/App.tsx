@@ -1,5 +1,7 @@
 import {useState, useEffect }  from 'react';
-import './App.css';
+import './App.scss';
+import Photo from './components/Photo';
+import Form from './components/Form';
 
 function App() {
   const [data, setData] = useState(null);
@@ -11,10 +13,11 @@ function App() {
     console.log(data);
   })()
   }, [])
-  
+
   return (
-    <div className="App">
-      ssss
+    <div className="wrapper">
+      <Photo></Photo>
+      <Form></Form>
     </div>
   );
 }
