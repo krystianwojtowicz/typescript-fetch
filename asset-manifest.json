@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/typescript-fetch/static/css/main.69edca19.css",
+    "main.js": "/typescript-fetch/static/js/main.a21c443a.js",
+    "index.html": "/typescript-fetch/index.html",
+    "main.69edca19.css.map": "/typescript-fetch/static/css/main.69edca19.css.map",
+    "main.a21c443a.js.map": "/typescript-fetch/static/js/main.a21c443a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69edca19.css",
+    "static/js/main.a21c443a.js"
+  ]
+}
