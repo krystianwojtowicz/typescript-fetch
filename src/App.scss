@@ -75,6 +75,12 @@
       /* 534/384 */
       /* 75 */
       /* 459 */
+      img{
+        // width: 33.9%;
+        // height: auto;
+        height: 300px;
+        width: 100px;
+      }
     }
     h1 {
       /* moze styknie ten drugi link do czcionki */
@@ -108,10 +114,10 @@
       }
     }
   }
-  /* img{
-    width: 33.9%;
-    height: auto;
-  } */
+  // img{
+  //   width: 33.9%;
+  //   height: auto;
+  // }
   button {
     font-family: "Lato", sans-serif;
     font-weight: 400;
