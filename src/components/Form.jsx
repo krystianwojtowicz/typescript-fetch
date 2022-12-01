@@ -20,15 +20,27 @@ const Form: React.FC<Data> = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    // validate(formValues);
     setIsSubmit(true);
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setFormErrors(validate(formValues));
+  //   if (Object.keys(formErrors).length === 0) {
+  //     console.log(formValues);
+
+  //   }
+  //   // validate(formValues);
+
+  //   // setIsSubmit(true);
+  //   // console.log(isSubmit);
+  // };
 
   const validate = (values) => {
     const errors = {};
@@ -59,6 +71,15 @@ const Form: React.FC<Data> = () => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
+      console.log(formErrors);
+      fetch("https://example/", {
+        method: "post",
+        body: Object.values(formValues),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
     }
   }, [formErrors]);
 
@@ -89,7 +110,6 @@ const Form: React.FC<Data> = () => {
         <hr className="under-h1" />s
         <div className="container">
           <form onSubmit={handleSubmit}>
-            <h1>Login Form</h1>
             <div className="ui divider"></div>
             <div className="ui form">
               <div className="field">
