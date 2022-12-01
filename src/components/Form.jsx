@@ -15,6 +15,7 @@ const Form: React.FC<Data> = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  let star_wars_data = [];
   // const [username, setUsername] = useState < string > "";
 
   const handleChange = (e) => {
@@ -68,13 +69,13 @@ const Form: React.FC<Data> = () => {
   };
 
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
       console.log(formErrors);
       fetch("https://example/", {
         method: "post",
-        body: Object.values(formValues),
+        body: [Object.values(formValues), JSON.stringify(star_wars_data)],
+        // body ok?
         headers: { "Content-Type": "application/json" },
       })
         .then((res) => res.json())
@@ -88,6 +89,9 @@ const Form: React.FC<Data> = () => {
     const res = await fetch(`https://swapi.dev/api/people/${counter}`);
     const data = await res.json();
     console.log(data);
+    star_wars_data = [
+      { name: data.name, created: data.created, vehicles: data.vehicles },
+    ];
     counter++;
   };
 
