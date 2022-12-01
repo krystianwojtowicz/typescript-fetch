@@ -5,10 +5,17 @@ import React, { useState, useEffect } from "react";
 // }
 
 const Form: React.FC<Data> = () => {
-  const initialValues = { login: "", password: "", email: "", phone: "" };
+  const initialValues = {
+    login: "",
+    password: "",
+    email: "",
+    phone: "",
+    mark: false,
+  };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  // const [username, setUsername] = useState < string > "";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +48,9 @@ const Form: React.FC<Data> = () => {
       errors.phone = "musisz wpisać numer telefonu";
     } else if (values.phone.length !== 9) {
       errors.phone = "Nieprawidłowy numer telefonu";
+    }
+    if (!values.mark) {
+      errors.mark = "musisz zatwierdzić regulamin";
     }
     return errors;
   };
@@ -116,6 +126,15 @@ const Form: React.FC<Data> = () => {
                   type="text"
                   name="phone"
                   value={formValues.phone}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="field">
+                <label>Regulamin:</label>
+                <input
+                  type="checkbox"
+                  name="mark"
+                  value={formValues.mark}
                   onChange={handleChange}
                 />
               </div>

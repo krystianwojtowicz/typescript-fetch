@@ -33,8 +33,8 @@ function Photo() {
     <>
       <header>
         <div className="name">
-          {/* Krystian Wójtowicz */}
-          imie i nazwisko osoby wykonujacej zadanie
+          Krystian Wójtowicz
+          {/* imie i nazwisko osoby wykonujacej zadanie */}
         </div>
         <div className="form-text">
           <div className="text">formularz rejestracyjny</div>
