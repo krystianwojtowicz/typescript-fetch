@@ -46,10 +46,6 @@ function Photo() {
         ) : (
           <div className="inner-picture"></div>
         )}
-
-        {/* <div className="inner-picture">
-          {image && <img classN src={image} alt="" />}
-        </div> */}
         <h1>Name</h1>
         <i className="fa-solid fa-circle-check"></i>
         <div className="look">
@@ -57,9 +53,6 @@ function Photo() {
           <span>eye color:</span>
         </div>
       </div>
-      <button>
-        <span>next profiles</span>
-      </button>
     </>
   );
 }
