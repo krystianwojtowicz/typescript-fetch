@@ -86,7 +86,7 @@ const Form: React.FC<Data> = () => {
 
   let counter: number = 1;
   const getData = async () => {
-    const res = await fetch(`https://swapi.dev/api/people/${counter}`);
+    const res = await fetch(`https://swapi.py4e.com/api/people/${counter}`);
     const data = await res.json();
     console.log(data);
     star_wars_data = [
