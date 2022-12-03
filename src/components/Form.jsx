@@ -3,8 +3,15 @@ import React, { useState, useEffect } from "react";
 // export interface Data {
 //   data: string;
 // }
-
-const Form: React.FC<Data> = () => {
+interface TypesOfValues {
+  login: string;
+  password: string;
+  email: string;
+  phone: string;
+  mark: boolean;
+}
+// const Form: React.FC<Props> = ({ formValues, setFormValues }) => {
+const Form: React.FC<TypesOfValues> = () => {
   const initialValues = {
     login: "",
     password: "",

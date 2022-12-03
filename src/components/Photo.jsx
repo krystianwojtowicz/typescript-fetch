@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Photo() {
+const Photo: React.FC = () => {
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -11,9 +11,9 @@ function Photo() {
 
       // const data = await response.json()
       setImage(response.url);
+
       // setImages(data)
     })();
-
     // fetchImages()
   }, []);
   // useEffect(() => {
@@ -55,6 +55,6 @@ function Photo() {
       </div>
     </>
   );
-}
+};
 
 export default Photo;
