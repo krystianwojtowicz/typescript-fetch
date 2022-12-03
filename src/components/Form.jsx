@@ -21,7 +21,11 @@ const Form: React.FC<Data> = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    // console.log(formValues);
+    // if dodany
+    if (isSubmit) {
+      setFormErrors(validate(formValues));
+      console.log(formErrors);
+    }
   };
 
   const handleSubmit = (e) => {
