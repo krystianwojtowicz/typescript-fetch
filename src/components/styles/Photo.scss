@@ -66,6 +66,11 @@
           right: -30%;
           top: 0;
         }
+        .person {
+          position: absolute;
+          right: -10%;
+          top: 5%;
+        }
         .h1name {
           font-family: "Inter", sans-serif;
           font-style: normal;
@@ -115,12 +120,24 @@
           text-align: center;
         }
       }
+      .picture {
+        .description {
+          .tick {
+          top: 50px;
+        }
+        .person {
+          top: 55px;
+          right: -5%;
+        }
+      }
   }
+}
   
   @media all and (max-width: 576px) {
       .picture {
-        .description .tick {
-          top: 50px;
+        .description .person {
+          top: 100px;
+          right: -24%;
         }
         .h1name {
           font-size: 30px;
