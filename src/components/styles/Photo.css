@@ -42,6 +42,7 @@
 }
 
 .picture {
+  position: relative;
   margin-left: 13.4%;
   width: 70.8%;
   aspect-ratio: 108/100;
@@ -61,30 +62,40 @@
   border-radius: 37.5% 3.7% 18.7% 9.7%/ 52% 5.2% 26.1% 13.1%;
 }
 
-.picture .h1name {
+.picture .description {
+  position: relative;
+  width: 41.7%;
+  margin-top: 26.39px;
+  margin-left: 28.3%;
+}
+
+.picture .description .tick {
+  position: absolute;
+  right: -30%;
+  top: 0;
+}
+
+.picture .description .h1name {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 50px;
   line-height: 61px;
-  margin-top: 26.39px;
   height: 76.26px;
-  width: 41.7%;
-  margin-left: 28.3%;
+  width: 100%;
   text-align: center;
 }
 
-.picture .look {
+.picture .description .look {
   font-family: "Inter", sans-serif;
   position: relative;
   top: -15.01px;
-  margin-left: 28.3%;
   height: 59.5px;
-  width: 46%;
+  width: 98%;
   background-color: #575555;
 }
 
-.picture .look .inner-look {
+.picture .description .look .inner-look {
   display: block;
   font-family: "Inter";
   font-style: italic;
@@ -111,6 +122,9 @@
 }
 
 @media all and (max-width: 576px) {
+  .picture .description .tick {
+    top: 50px;
+  }
   .picture .h1name {
     font-size: 30px;
   }

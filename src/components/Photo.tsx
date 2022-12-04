@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './styles/Photo.scss';
+import img1 from '../images/tick.jpg'
 
 
 function Photo() {
@@ -30,11 +31,14 @@ function Photo() {
         ) : (
           <div className="inner-picture"></div>
         )}
+        <div className="description">
         <h1 className="h1name">Name</h1>
         <i className="fa-solid fa-circle-check"></i>
         <div className="look">
           <span className="inner-look">age:</span>
           <span className="inner-look">eye color:</span>
+        </div>
+        <img className="tick" src={img1} alt="" />
         </div>
       </div>
     </>
