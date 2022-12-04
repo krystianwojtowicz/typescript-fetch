@@ -1,33 +1,16 @@
 import { useState, useEffect } from "react";
 
 function Photo() {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<string>("");
+
+  const getPhoto = async () => {
+    const response = await fetch(`https://picsum.photos/534/383`);
+    setImage(response.url);
+  };
 
   useEffect(() => {
-    (async () => {
-      const response = await fetch(`https://picsum.photos/534/383`);
-      // const data = await response.json()
-      // console.log(data)
-
-      // const data = await response.json()
-      setImage(response.url);
-      // setImages(data)
-    })();
-
-    // fetchImages()
+    getPhoto();
   }, []);
-  // useEffect(() => {
-  //   const fetchImages = async () => {
-  //     const response = await fetch(
-  //       `https://.picsum.photos/534/383`
-  //     )
-  //     const data = await response.json()
-  //     console.log(data)
-  //     setImages(data)
-  //   }
-
-  //   fetchImages()
-  // }, [])
 
   return (
     <>
@@ -58,3 +41,4 @@ function Photo() {
 }
 
 export default Photo;
+
