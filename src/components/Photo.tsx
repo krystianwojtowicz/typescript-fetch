@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import './styles/Photo.scss';
-import img1 from '../images/tick.jpg'
+import img1 from '../images/Vector.svg';
+import img2 from '../images/Person.svg';
+// import { FontAwesomeIcon, faCircleCheck } from '@fortawesome/react-fontawesome';
 
 
 function Photo() {
@@ -40,6 +42,7 @@ function Photo() {
           <span className="inner-look">eye color:</span>
         </div>
         <img className="tick" src={img1} alt="" />
+        <img className="person" src={img2} alt="" />
         </div>
       </div>
     </>
