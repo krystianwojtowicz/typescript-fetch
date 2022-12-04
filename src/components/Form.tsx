@@ -183,7 +183,19 @@ const Form: React.FC = () => {
         <hr className="under-h1" />
           <form onSubmit={handleSubmit} className="inner-form">
           {/* <form> */}
-          <div className="wrapper-field">
+          <Input value={formValues.login}
+                  onChange={handleChange} error={formErrors.login} name="login" type="text" label="Login:"> 
+          </Input>
+          <Input value={formValues.password}
+                  onChange={handleChange} error={formErrors.password} name="password" type="text" label="Hasło:"> 
+          </Input>
+          <Input value={formValues.email}
+                  onChange={handleChange} error={formErrors.email} name="email:" type="text" label="Email:"> 
+          </Input>
+          <Input value={formValues.phone}
+                  onChange={handleChange} error={formErrors.phone} name="phone" type="text" label="Numer Telefonu:"> 
+          </Input>
+          {/* <div className="wrapper-field">
           <div className="field">
                 <label>Login:</label>
                 <input
@@ -196,8 +208,8 @@ const Form: React.FC = () => {
               </div>
               <p>{formErrors.login}</p>
               <hr />
-          </div>
-          <div className="wrapper-field">
+          </div> */}
+          {/* <div className="wrapper-field">
           <div className="field">
                 <label>Hasło:</label>
                 <input
@@ -238,7 +250,7 @@ const Form: React.FC = () => {
               </div>
               <p>{formErrors.phone}</p>
               <hr />
-              </div>
+              </div> */}
               <div className="wrapper-field">
               <div className="field checkbox">
                 
