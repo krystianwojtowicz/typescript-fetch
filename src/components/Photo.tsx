@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import './styles/Photo.scss';
+
 
 function Photo() {
   const [image, setImage] = useState<string>("");
