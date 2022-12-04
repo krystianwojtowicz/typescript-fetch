@@ -10,13 +10,13 @@
   margin: 0 auto;
 }
 
-.wrapper header {
+.wrapper .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 87px;
 }
 
-.wrapper header .name {
+.wrapper .header .name {
   /* czcionka z filmiku? */
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -27,12 +27,12 @@
   height: 77px;
   width: 51.3%;
   margin-left: 1.85%;
-  background-color: aquamarine;
   margin-top: 11px;
 }
 
-.wrapper header .form-text {
+.wrapper .header .form-text {
   width: 20.9%;
+  min-width: 136px;
   background-color: #40483a;
   margin-right: 2.3%;
   margin-top: 11px;
@@ -41,7 +41,7 @@
   box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.75);
 }
 
-.wrapper header .form-text .text {
+.wrapper .header .form-text .text {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -50,7 +50,6 @@
   margin-top: 10.5px;
   color: #ffffff;
   width: 80%;
-  background-color: black;
   margin-left: 18.3%;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -83,13 +82,7 @@
   /* 459 */
 }
 
-.wrapper .picture .inner-picture img {
-  height: 300px;
-  width: 100px;
-}
-
-.wrapper .picture h1 {
-  /* moze styknie ten drugi link do czcionki */
+.wrapper .picture .h1name {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -112,7 +105,7 @@
   background-color: #575555;
 }
 
-.wrapper .picture .look span {
+.wrapper .picture .look .inner-look {
   display: block;
   font-family: "Inter";
   font-style: italic;
@@ -134,16 +127,19 @@
   background: #35660e;
   height: 54.88px;
   width: 19.8%;
+  min-width: 160px;
   box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
   border: none;
 }
 
-.wrapper .next-profiles span {
+.wrapper .next-profiles .inner-next-profiles {
+  position: relative;
+  top: -5px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.wrapper .form h1 {
+.wrapper .form .h1form {
   text-transform: uppercase;
   width: 79.4%;
   height: 52.64px;
@@ -178,7 +174,7 @@
 .wrapper .form .inner-form .field {
   width: 45.9%;
   height: 43.35px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -188,11 +184,11 @@
   white-space: nowrap;
 }
 
-.wrapper .form .inner-form .field input {
+.wrapper .form .inner-form .field .input {
   border: none;
 }
 
-.wrapper .form .inner-form .checkbox input[type=checkbox] {
+.wrapper .form .inner-form .checkbox .input[type="checkbox"] {
   transform: scale(2.3);
   margin-right: 8.9%;
 }
@@ -222,8 +218,8 @@
 }
 
 .wrapper .form .inner-form .submit {
-  color: #FFFFFF;
-  border: 1px solid #D9D9D9;
+  color: #ffffff;
+  border: 1px solid #d9d9d9;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
   margin-top: 28.65px;
@@ -237,9 +233,9 @@
   min-width: 102px;
 }
 
-.wrapper .form .inner-form .submit span {
+.wrapper .form .inner-form .submit .inner-submit {
   line-height: 30px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: italic;
   font-weight: 400;
   font-size: 30px;
@@ -247,8 +243,51 @@
   top: -5px;
 }
 
+@media all and (max-width: 992px) {
+  .wrapper .header .form-text .text {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .wrapper .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper .header .name {
+    text-align: center;
+  }
+}
+
 @media all and (max-width: 576px) {
+  .wrapper .picture .h1name {
+    font-size: 30px;
+  }
+  .wrapper .next-profiles {
+    display: block;
+    margin: auto;
+    margin-top: 29.67px;
+  }
+  .wrapper .form .h1form {
+    font-size: 16px;
+  }
+  .wrapper .form .inner-form .field:nth-of-type(4) {
+    margin: auto;
+    flex-direction: column;
+  }
   .wrapper .form .inner-form .submit {
-    margin-left: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media all and (max-width: 345px) {
+  .wrapper .form .inner-form .field:nth-of-type(5) {
+    margin: auto;
+    flex-direction: column;
+  }
+  .wrapper .form .inner-form .field:nth-of-type(5) .input {
+    margin-bottom: 10px;
   }
 }

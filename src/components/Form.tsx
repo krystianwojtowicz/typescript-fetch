@@ -129,10 +129,12 @@ const Form: React.FC = () => {
     }else errors.login = ""
     if (!values.phone) {
       errors.phone = "musisz wpisać numer telefonu";
-    } else if (values.phone.length !== 9) {
+    // } else if (values.phone.length !== 9 && (!/^[0-9]+$/.test(values.phone))) {
+    } else if (!/^\d{9}$/.test(values.phone)) {
+    // } else if (!/^[0-9]+$/.test(values.phone)) {
       errors.phone = "Nieprawidłowy numer telefonu";
     }
-    if (!values.mark) {
+    if (values.mark===false) {
       errors.mark = "musisz zatwierdzić regulamin";
     }
     return errors;
@@ -173,56 +175,65 @@ const Form: React.FC = () => {
     <>
       <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
       <button className="next-profiles" onClick={handleClick}>
-        <span>next profiles</span>
+        <span className="inner-next-profiles">next profiles</span>
       </button>
       <div className="form">
-        <h1>formularz rejestracyjny</h1>
+        <h1 className='h1form'>formularz rejestracyjny</h1>
         <hr className="under-h1" />
           <form onSubmit={handleSubmit} className="inner-form">
           {/* <form> */}
           <div className="field">
                 <label>Login:</label>
                 <input
+                className="input"
                   type="text"
                   name="login"
                   value={formValues.login}
                   onChange={handleChange}
                 />
               </div>
+              {formErrors.login}
               <hr />
           <div className="field">
                 <label>Hasło:</label>
                 <input
+                className="input"
                   type="text"
                   name="password"
                   value={formValues.password}
                   onChange={handleChange}
                 />
               </div>
+              {formErrors.password}
               <hr />
               <div className="field">
                 <label>Email:</label>
                 <input
+                className="input"
                   type="text"
                   name="email"
                   value={formValues.email}
                   onChange={handleChange}
                 />
               </div>
+              {formErrors.email}
               <hr />
               <div className="field">
                 <label>Numer Telefonu:</label>
                 <input
+                className="input"
                   type="text"
                   name="phone"
                   value={formValues.phone}
                   onChange={handleChange}
                 />
               </div>
+              {formErrors.phone}
               <hr />
               <div className="field checkbox">
                 
                 <input
+                className="input"
                   type="checkbox"
                   name="mark"
                   checked={isChecked}
@@ -230,6 +241,7 @@ const Form: React.FC = () => {
                 />
                 <label>Akceptuję Regulamin</label>
               </div>
+              {formErrors.mark}
               {/* <Input
               type="text"
                 value={formValues.login}
@@ -311,7 +323,7 @@ const Form: React.FC = () => {
               // onSubmit={handleSubmit} 
               type="submit">
                 
-                <span>zapisz</span>
+                <span className="inner-submit">zapisz</span>
               </button>
           </form>
       </div>
