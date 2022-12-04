@@ -14,7 +14,7 @@ function Photo() {
 
   return (
     <>
-      <header>
+      <header className="header">
         <div className="name">
           Krystian Wójtowicz
           {/* imie i nazwisko osoby wykonujacej zadanie */}
@@ -29,11 +29,11 @@ function Photo() {
         ) : (
           <div className="inner-picture"></div>
         )}
-        <h1>Name</h1>
+        <h1 className="h1name">Name</h1>
         <i className="fa-solid fa-circle-check"></i>
         <div className="look">
-          <span>age:</span>
-          <span>eye color:</span>
+          <span className="inner-look">age:</span>
+          <span className="inner-look">eye color:</span>
         </div>
       </div>
     </>
