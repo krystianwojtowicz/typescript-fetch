@@ -56,7 +56,6 @@ const Form: React.FC = () => {
 
   const handleChecbox = (e: ChangeEvent<HTMLInputElement>) => {
     setIsChecked(!isChecked);
-    setFormValues({ ...formValues, ['mark']: isChecked });
     console.log(formValues)
   }
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -65,6 +64,36 @@ const Form: React.FC = () => {
     console.log(formValues)
   };
 
+// <<<<<<< HEAD
+// =======
+  useEffect(()=> {
+    setFormValues(prev=>({ ...prev, mark: isChecked }));
+  },[isChecked])
+
+  useEffect(()=> {
+    if(isSubmit) {
+            setFormErrors(validate(formValues));
+    }
+    },[formValues])
+
+  const saveData = () => {
+    const hasNoErrors = Object.values(formErrors).every(
+      (error) => error === ""
+    );
+
+    if (hasNoErrors && isSubmit) {
+      fetch("https://example/", {
+        method: "post",
+        body: JSON.stringify({ ...formValues, starWarsData }),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    }
+  };
+
+// >>>>>>> 53094c7 (fixing submit validation, onchange validation)
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
