@@ -1,7 +1,6 @@
 import React, {
   useState,
   useEffect,
-  useCallback,
   ChangeEvent,
   FormEvent,
 } from "react";
@@ -61,7 +60,6 @@ const Form: React.FC = () => {
 
   const handleChecbox = (e: ChangeEvent<HTMLInputElement>) => {
     setIsChecked(!isChecked);
-    setFormValues({ ...formValues, ['mark']: isChecked });
     console.log(formValues)
   }
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +68,16 @@ const Form: React.FC = () => {
     // setFormErrors(validate(formValues));
     console.log(formValues)
   };
+
+  useEffect(()=> {
+    setFormValues(prev=>({ ...prev, mark: isChecked }));
+  },[isChecked])
+
+  useEffect(()=> {
+    if(isSubmit) {
+            setFormErrors(validate(formValues));
+    }
+    },[formValues])
 
   const saveData = () => {
     const hasNoErrors = Object.values(formErrors).every(
@@ -125,7 +133,6 @@ const Form: React.FC = () => {
     if (!values.email) {
       errors.email = "musisz wpisać email";
     } else if (!values.email.match(/.+@.+/)) {
-      const hasAtSign = values.email.includes("@"); // sprawdzenie czy zawiera "małpę"
       errors.email = "Nieprawidłowy format adresu e-mail";
     }else errors.login = ""
     if (!values.phone) {
