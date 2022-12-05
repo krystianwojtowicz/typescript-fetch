@@ -64,8 +64,6 @@ const Form: React.FC = () => {
     console.log(formValues)
   };
 
-// <<<<<<< HEAD
-// =======
   useEffect(()=> {
     setFormValues(prev=>({ ...prev, mark: isChecked }));
   },[isChecked])
@@ -76,24 +74,6 @@ const Form: React.FC = () => {
     }
     },[formValues])
 
-  const saveData = () => {
-    const hasNoErrors = Object.values(formErrors).every(
-      (error) => error === ""
-    );
-
-    if (hasNoErrors && isSubmit) {
-      fetch("https://example/", {
-        method: "post",
-        body: JSON.stringify({ ...formValues, starWarsData }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
-    }
-  };
-
-// >>>>>>> 53094c7 (fixing submit validation, onchange validation)
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -178,7 +158,7 @@ const Form: React.FC = () => {
                   onChange={handleChange} error={formErrors.password} name="password" type="text" label="Hasło:"> 
           </Input>
           <Input value={formValues.email}
-                  onChange={handleChange} error={formErrors.email} name="email:" type="text" label="Email:"> 
+                  onChange={handleChange} error={formErrors.email} name="email" type="text" label="Email:"> 
           </Input>
           <Input value={formValues.phone}
                   onChange={handleChange} error={formErrors.phone} name="phone" type="text" label="Numer Telefonu:"> 
