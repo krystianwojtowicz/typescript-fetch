@@ -71,10 +71,6 @@
   white-space: nowrap;
 }
 
-.form .inner-form .wrapper-field .field .input {
-  border: none;
-}
-
 .form .inner-form .wrapper-field .checkbox {
   position: relative;
 }

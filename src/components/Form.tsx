@@ -16,9 +16,11 @@ interface RegisterFormData {
 }
 
 interface StarWarsPerson {
-  vehicles: string[];
-  created: string;
-  name: string;
+  // vehicles: string[];
+  // created: string;
+  // name: string;
+  gender: string;
+  email: string;
 }
 
 const initialValues: RegisterFormData = {
@@ -123,13 +125,18 @@ const Form: React.FC = () => {
   };
   const getData = async () => {
     const res = await fetch(
-      `https://swapi.py4e.com/api/people/${apiRequestCounter}`
+      // `https://swapi.py4e.com/api/people/${apiRequestCounter}`
+      `https://randomuser.me/api/?results=${apiRequestCounter}`
     );
     const data = await res.json();
-    console.log(data)
+    const result = data.results[0]
+    console.log(result)
+    // console.log(data)
     setStarWarsData([
-      { name: data.name, created: data.created, vehicles: data.vehicles },
+      // { name: data.name, created: data.created, vehicles: data.vehicles },
+      { gender: result.gender, email: result.email },
     ]);
+    console.log(starWarsData)
     setApiRequestCounter(apiRequestCounter + 1);
   };
 
